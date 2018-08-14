@@ -36,11 +36,11 @@ Note: I'm using a bunch of newer Javascript stuff: aync/await, fetch, object sho
 Hopefully this saved someone else from my pain and wasted hours looking at unhelpful libraries.  
 
 
-##Part 2 Things broke + Axios
+## Part 2 Things broke + Axios
 
 Somewhere between time passing and moving to use Axios rather than fetch, the uploader function broke. 
 
-Notes:
+###### Notes:
 1. It looks like UploadCare expects the file to be an object with keys of uri, type, and name. 
 2. FormData in React Native does not have all methods that FormData web api provides. We have to use append to add key/value pairs, not set. 
 3. If you put your public key in your .env file, remember to rebuild your project. :P
@@ -72,9 +72,8 @@ export async function uploadPhoto(photo) {
 
 A successful request return should look like `{file: <uuid>}`
 
-Final notes:
+###### Final notes:
 
-If you're testing the endpoint with Insomnia, choose Multipart Form so you can select file for value type for your file field.
-You can also paste the example cURL request from the UploadCare docs into the field just right of the drop down menu for request type, and it will format it for you. 
+If you're testing the endpoint with **Insomnia**, choose Multipart Form so you can select file for value type for your file field.You can also paste the example cURL request from the UploadCare docs into the field just right of the drop down menu for request type, and it will format it for you. 
 
-If you're testing the endpoint with Postman, choose Form Data and select file for value type for your file field. 
+If you're testing the endpoint with **Postman**, choose Form Data and select file for value type for your file field. 
